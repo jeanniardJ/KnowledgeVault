@@ -2,5 +2,4 @@
 
 ## Application programming interface
 
-
-Un ensemble de régles et de protocoles qui permettenet à des applications informatique de communiquer et d’interagir entre elles.
+Un ensemble de règles et de protocoles qui permettent à des applications informatiques de communiquer et d’interagir entre elles.
