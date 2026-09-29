@@ -1,6 +1,6 @@
 # Flashcards
 
-Short questions and answers used to review technical concepts.
+Technical flashcards organized by subject.
 
 ## Categories
 
@@ -8,7 +8,17 @@ Short questions and answers used to review technical concepts.
 - [Databases](databases/README.md)
 - [Development](development/README.md)
 - [DevOps](devops/README.md)
+- [Infrastructure](infrastructure/README.md)
+- [Methodologies](methodologies/README.md)
+- [Professional Environment](professional-environment/README.md)
+- [Quality](quality/README.md)
+- [Regulations](regulations/README.md)
 - [Security](security/README.md)
 - [Software Design](software-design/README.md)
+- [Standards](standards/README.md)
+- [Tools](tools/README.md)
+- [UX/UI](ux-ui/README.md)
 
-## Available flashcards
+## Root Flashcards
+
+- [Example](exemple.md)
