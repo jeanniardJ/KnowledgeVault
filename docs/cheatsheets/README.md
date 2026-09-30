@@ -1,12 +1,13 @@
 # Cheatsheets
 
-Quick references for commands, syntax and common workflows.
+Practical references for commands, syntax, configurations and common development workflows.
 
 ## Categories
 
-- [Databases](databases/README.md)
-- [DevOps](devops/README.md)
 - [Development](development/README.md)
+- [DevOps](devops/README.md)
 - [Tools](tools/README.md)
 
-## Available cheatsheets
+## Root Cheatsheets
+
+- [Example](exemple.md)
