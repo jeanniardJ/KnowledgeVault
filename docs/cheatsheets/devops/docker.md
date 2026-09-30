@@ -465,4 +465,146 @@ CMD ["npm","start"]
 
 ### Common Dockerfile instructions
 
+| Instruction | Description |
+|---|---|
+| `FROM` | Définit l’image de base |
+| `WORKDIR` | Définit le répertoire de travail |
+| `COPY` | Copie des fichiers dans l’image |
+| `RUN` | Exécute une commande pendant le build |
+| `ENV` | Définit une variable d’environnement |
+| `EXPOSE` | Documente le port utilisé par l’application |
+| `CMD` | Définit la commande par défaut |
+| `ENTRYPOINT` | Définit le processus principal |
 
+## Common workflow
+
+Construire et exécuter une application :
+
+```console
+docker build -t my-app:1.0 .
+docker run -d --name my-app-container -p 3000:3000 my-app:1.0
+docker ps
+docker logs -f my-app-container
+```
+
+Arrêter et supprimer le conteneur :
+
+```console
+docker stop my-app-container
+docker rm my-app-container
+```
+
+## Cleanup
+
+### Remove stopped containers
+
+Supprimer les conteneurs arrêtés :
+
+```console
+docker container prune
+```
+
+### Remove unused networks
+
+Supprimer les réseaux inutilisés :
+
+```console
+docker network prune
+```
+
+### Remove unused volumes
+
+Supprimer les volumes inutilisés :
+
+```console
+docker volume prune
+```
+
+### Remove unused resources
+
+Supprimer les ressources DOcker inutilisées :
+
+```console
+docker system prune
+```
+
+Supprimer également les volumes inutilisés :
+
+```console
+docker system prune --volumes
+```
+
+> Attention : les commandes `prune` peuvent supprimer des ressources encore utiles. Vérifier les ressources ciblées avant de confirmer.
+
+## Security notes
+
+- Utiliser des images officielles ou provenant de sources fiables.
+- Éviter d’exécuter les conteneurs avec `--privileged` sans nécessité.
+- Ne jamais intégrer de mots de passe ou de tokens dans un `Dockerfile`.
+- Utiliser des secrets ou des variables d’environnement adaptées.
+- Ajouter un fichier `.dockerignore`.
+- Utiliser des images minimales comme les variantes `alpine`
+  lorsque cela est compatible avec l’application.
+- Scanner les images avant leur déploiement.
+- Ne pas exposer inutilement les ports sur toutes les interfaces réseau.
+
+Exemple de `.dockerignore` :
+
+```text
+.git
+.gitignore
+node_modules
+.env
+*.log
+dist
+coverage
+```
+
+## Troubleshooting
+
+### Display resource usage
+
+Afficher la consommation des conteneurs :
+
+```bash
+docker stats
+```
+
+### Check port mappings
+
+Vérifier les ports associés à un conteneur :
+
+```bash
+docker port web-server
+```
+
+### Check disk usage
+
+Afficher l’espace utilisé par Docker :
+
+```bash
+docker system df
+```
+
+### Check container status
+
+```bash
+docker inspect --format="{{.State.Status}}" web-server
+```
+
+## Related topics
+
+- Containers
+- Images
+- Dockerfile
+- Docker Compose
+- Volumes
+- Networks
+- Container security
+- CI/CD
+
+## Sources
+
+- [Docker Documentation](https://docs.docker.com/)
+- [Docker CLI Reference](https://docs.docker.com/reference/cli/docker/)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
