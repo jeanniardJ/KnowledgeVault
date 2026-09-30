@@ -44,7 +44,7 @@ var user = new User();
 
 ## Fields
 
-Un champs stoke une donnée directement dans la classe :
+Un champ stocke une donnée directement dans la classe :
 
 ```csharp
 public class User
