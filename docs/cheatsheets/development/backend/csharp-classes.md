@@ -396,3 +396,214 @@ public class Developer : Employee
 La classe `Developer` possède les membres accessibles de `Employee` et ses propres membres.
 
 ## Virtual and override
+
+Autoriser la redéfinition d'une méthode :
+
+```csharp
+public class Animal
+{
+    public virtual void MakeSound(){
+        Console.WriteLine("Unknow sound");
+    }
+}
+
+public class Cat : Animal
+{
+    Public override void MarkeSound(){
+        Console.WriteLine("Meow");
+    }
+}
+```
+
+Utilisation polymorphique :
+
+```csharp
+Animal animal = new cat();
+animal.MakeSound(); // Meow
+```
+
+## Interfaces
+
+Une classe peut implémenter une interface :
+
+```csharp
+publicc interface IRepository
+{
+    void Save();
+}
+
+public class UserRepository : IRepository
+{
+    public void Save(){
+        Console.WriteLine("Utilisateur sauvegardé.");
+    }
+}
+```
+
+Une interface définit un contrat que la classe doit respecter.
+
+## Records and classes
+
+Une classe est généralement utilisée pour représenter un objet métier mutable ou possédant un cycle de vie.
+
+```csharp
+public class User
+{
+    public string Name { get; set; }
+}
+```
+
+Un `record` est souvent adapté aux objets principalement définis par leurs valeurs :
+
+```csharp
+public record UserDto(string Name, string Email)
+```
+
+## Object initializer
+
+Initialiser un objet après sa création :
+
+```csharp
+var user = new User
+{
+    name = "Alice",
+    Age = 30
+}
+```
+
+## Target-typed new
+
+Éviter de répéter le type lorsqu'il est déjà connu :
+
+```csharp
+User user = new("Alice");
+```
+
+Cette syntaxe nécessite une version compatible de C#.
+
+## Nullability
+
+Déclarer une propriété qui peut contenir `null` :
+
+```csharp
+public class User
+{
+    public string? MiddleName { get; set; }
+}
+```
+
+Déclarer une propriété obligatoire non nullable :
+
+```csharp
+public class User
+{
+    public required string Name { get; set; }
+}
+```
+
+La disponibilité de `required` dépend de la version de C# utilisée.
+
+## Equality
+
+Par défaut, les classes comparent généralement les références :
+
+```csharp
+var first = new User("Alice");
+var second = new User("Alice");
+
+bool same = first == second;
+```
+
+Pour comparer les valeurs, il faut redéfinir `Equals` et `GetHashCode`, ou utiliser un `record` lorsque cela correspond au besoin.
+
+## Complete exemple
+
+```csharp
+public class BankAccount
+{
+    public string Owner { get; }
+    public decimal Balance { get; private set;}
+
+    public BankAccount(string owner, decimal initialBalance)
+    {
+        if(string.IsNullOrWhiteSpace(owner)){
+            throw new ArgumentException("Le propriétaire est obligatoire.");
+        }
+
+        if(initialBalance < 0){
+            throw new ArgumentException("Le solde initial ne peut pas être négatif.");
+        }
+
+        Owner = owner;
+        Balance = initialBalance;
+    }
+
+    public void Deposit(decimal amount){
+        if(amount <= 0){
+            throw new ArgumentException("Le montant doit être supérieur à zéro.").
+        }
+
+        Balance += amount;
+    }
+
+    public bool Withdraw(decimal amount){
+        if(amount <= 0 || amount > Balance){
+            return false;
+        }
+
+        Balance -= amount;
+        return true;
+    }
+}
+```
+
+Utilisation :
+
+```csharp
+var account = new BankAccount("Alice", 100);
+
+account.Deposit(50);
+bool success = account.Withdraw(25);
+
+Console.WriteLine(account.Balance); //125
+```
+
+## Best practices
+
+- Respecter le principe de responsabilité unique.
+- Préférer des propriétés contrôlées à des champs publics.
+- Garder les champs privés.
+- Valider les paramètres dans les constructeurs et les méthodes.
+- Utiliser l'injection de dépendances pour les services externes.
+- Éviter les classes statiques pour les composants nécessitant un état ou des dépendances remplaçables.
+- Préférer la composition à l'héritage lorsque cela simplifie le modèle.
+- Utiliser `sealed` lorsque l'héritage n'est pas prévu.
+- Donner des noms explicites aux classes, propriétés et méthodes.
+- Éviter les classes qui trop de responsabilités.
+
+## Common mistakes
+
+- Rendre tous les champs publics.
+- Utiliser une classe statique pour stoker un état global.
+- Ajouter une logique métier importante dans les propriétés.
+- Créer une classe qui gère plusieurs responsabilités sans rapport.
+- Utiliser l'héritage uniquement pour réutiliser quelques méthodes.
+- Oublier de valider les arguments du constructeur.
+- Comparer deux objets avec `==` en pensant comparer leurs valeurs.
+
+## Related topics
+
+- Object-Oriented Programming
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+- Interfaces
+- Records
+- Dependency Injection
+
+## Sources
+
+- [Microsoft Learn - Classes, structs, and records](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/classes)
+- [Microsoft Learn - Object-oriented programming](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop)
+- [Microsoft Learn - Access modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
