@@ -4,4 +4,5 @@ Practical references for programming languages, frameworks and development techn
 
 ## Subcategories
 
+- [Algorithms](algorithms/README.md)
 - [Backend](backend/README.md)
