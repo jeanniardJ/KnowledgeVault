@@ -1,18 +1,10 @@
 # Security Flashcards
 
-Flashcards covering application security, web vulnerabilities
-and security best practices.
+Flashcards about application security, web vulnerabilities and security best practices.
 
 ## Flashcards
 
 - [ANSSI](anssi.md)
-- [CSRF](csrf.md)
+- [Cross-Site Request Forgery](csrf.md)
 - [OWASP](owasp.md)
-- [XSS](xss.md)
-
-## Topics
-
-- Security principles
-- Web vulnerabilities
-- Security standards
-- Application hardening
+- [Cross-Site Scripting](xss.md)

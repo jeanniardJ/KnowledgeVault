@@ -1,6 +1,6 @@
 # Flashcards
 
-Technical flashcards organized by subject. Each flashcard focuses on one concept and uses concise definitions, questions, answers, key points and examples.
+Technical flashcards organized by subject.
 
 ## Categories
 

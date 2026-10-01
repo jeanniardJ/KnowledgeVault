@@ -1,9 +1,10 @@
 # Development Flashcards
 
-Flashcards covering backend, frontend and web development concepts.
+Flashcards about programming, algorithms and web development.
 
 ## Subcategories
 
+- [Algorithms](algorithms/README.md)
 - [Backend](backend/README.md)
 - [Frontend](frontend/README.md)
 - [Web](web/README.md)
