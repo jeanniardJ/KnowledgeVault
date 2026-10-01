@@ -75,7 +75,7 @@ public static int BinarySearch(int[] numbers, int target)
 Tableau :
 
 ```text
-[3, 8, 12, 17, 21, 29, 35]
+[3][8][12][17][21][29][35]
 ```
 
 Recherche de `29` :
@@ -89,20 +89,20 @@ Recherche de `29` :
 
 ## Complexity
 
-| Case | Time | Space |
-|---|---|---|
-| Best case | `O(1)` | `O(1)` |
+| Case         | Time       | Space  |
+| ------------ | ---------- | ------ |
+| Best case    | `O(1)`     | `O(1)` |
 | Average case | `O(log n)` | `O(1)` |
-| Worst case | `O(log n)` | `O(1)` |
+| Worst case   | `O(log n)` | `O(1)` |
 
 L'implémentation itérative utilise une mémoire auxiliaire constante. Une version récursive peut utiliser une mémoire supplémentaire liée à la profondeur des appels.
 
 ## Dichotomic search versus linear search
 
-| Algorithm | Requirement | Time complexity |
-|---|---|---|
-| Linear search | Tableau trié ou non trié | `O(n)` |
-| Binary search | Tableau trié | `O(log n)` |
+| Algorithm     | Requirement              | Time complexity |
+| ------------- | ------------------------ | --------------- |
+| Linear search | Tableau trié ou non trié | `O(n)`          |
+| Binary search | Tableau trié             | `O(log n)`      |
 
 ## Common mistakes
 
