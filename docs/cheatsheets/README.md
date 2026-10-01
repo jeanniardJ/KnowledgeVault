@@ -4,6 +4,7 @@ Practical references for commands, syntax, configurations and common development
 
 ## Categories
 
+- [Databases](databases/README.md)
 - [Development](development/README.md)
 - [DevOps](devops/README.md)
 - [Tools](tools/README.md)

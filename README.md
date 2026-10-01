@@ -7,10 +7,6 @@ Personal knowledge repository for technical learning, documentation and continuo
 - [Flashcards](docs/flashcards/README.md)
 - [Cheatsheets](docs/cheatsheets/README.md)
 
-## Purpose
-
-KnowledgeVault centralizes concise technical explanations, revision flashcards and practical command references related to software development, architecture, databases, DevOps, cybersecurity and professional practices.
-
 ## Documentation types
 
 ### Flashcards
