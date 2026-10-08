@@ -15,17 +15,22 @@ Programmation Orienter Object
 
 ### Detailed explanation
 
-La programmation Orientée Objet (POO) se base sur 4 principes fondamentaux.
+La programmation Orientée Objet (POO) se base sur quatres principes fondamentaux.
 
 ## Encapsulation
 
-* Les caractéristiques communes
-* Les comportements communs à tous les éléments.
+Consiste à regrouper dans une même entité (objet), les données et les traitements qui sont spécifiques :
+
+* Attributs (propriétés) : données incluses dans l'objet
+* Méthodes (fonctions ou procédure) : les traitements définis dans un objet.
   
 ### Exemple
 
+Une classe Rectangle qui est un template abstrait de l'entité rectangle, qui comporte des attributs spécifiques à ces caractéristiques. Une méthode de type "procédure", dût à son "type" de retour "void" dans sa signature.
+
 ```csharp
 public class Rectangle{
+
     private int largeur;
     private int longueur;
     private string name;
@@ -42,6 +47,28 @@ public class Rectangle{
 * Les comportements communs à tous les éléments.
 
 ### Exemple d'abstraction
+
+Tous les objets créés de la classe "Rectangle", ont tous les mêmes caractéristiques et comportement communs.
+
+```csharp
+public class Rectangle{
+
+    //Caractéristique
+    private int largeur;
+    private int longueur;
+    private string name;
+
+    //Comportement
+    public void Info(){
+    }
+}
+```
+
+## L'héritage
+
+L'héritage permet à un objet d'obtenir d'un élément parent un ensemble de mécaniques et caractéristiques. 
+
+## Exemple d'héritage
 
 ```csharp
 class public Form{
@@ -62,6 +89,22 @@ class public Rectangle : form {
 }
 ```
 
-## L'héritage
-
 ## Le polymorphisme
+
+Le polymorphisme permet d'aller plus loin en manipulant un type enfant dans un type parent dont il est descendant.
+
+### Exemple de polymorphisme
+
+```csharp
+public class Form{
+
+}
+
+public class Rectangle : Form {
+
+}
+
+
+Form rectangleA = new Rectangle();
+
+```
