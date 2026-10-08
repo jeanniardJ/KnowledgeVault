@@ -15,7 +15,7 @@ Programmation Orienter Object
 
 ### Detailed explanation
 
-La programmation Orientée Objet (POO) se base sur quatres principes fondamentaux.
+La programmation Orientée Objet (POO) se base sur quatre principes fondamentaux.
 
 ## Encapsulation
 
@@ -66,7 +66,7 @@ public class Rectangle{
 
 ## L'héritage
 
-L'héritage permet à un objet d'obtenir d'un élément parent un ensemble de mécaniques et caractéristiques. 
+L'héritage permet à un objet d'obtenir d'un élément parent un ensemble de mécaniques et caractéristiques.
 
 ## Exemple d'héritage
 
